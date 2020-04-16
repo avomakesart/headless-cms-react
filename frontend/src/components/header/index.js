@@ -1,18 +1,20 @@
-import React from "react";
+import React from 'react';
 import {
   NavContainerHolder,
   NavContainer,
   Navigation,
   NavLogo,
   NavLinkContainer,
-  CustomNavLink
-} from "./header.styles";
+  CustomNavLink,
+} from './header.styles';
 
-import MobileHeader from "./header.mobile";
+import MobileHeader from './header.mobile';
+
+import ButtonTranslate from '../translator-button/index';
 
 const activeStyle = {
-  borderBottom: " 1px solid black",
-  transition: "0.2s"
+  borderBottom: ' 1px solid black',
+  transition: '0.2s',
 };
 
 export const Header = () => {
@@ -27,13 +29,7 @@ export const Header = () => {
               <CustomNavLink activeStyle={activeStyle} to="/work">
                 Our Work
               </CustomNavLink>
-              <CustomNavLink
-                activeStyle={{
-                  borderBottom: " 1px solid black",
-                  transition: "0.2s"
-                }}
-                to="/about"
-              >
+              <CustomNavLink activeStyle={activeStyle} to="/about">
                 About
               </CustomNavLink>
               <CustomNavLink activeStyle={activeStyle} to="/news">
@@ -42,6 +38,7 @@ export const Header = () => {
               <CustomNavLink activeStyle={activeStyle} to="/contact">
                 Contact
               </CustomNavLink>
+              <ButtonTranslate />
             </NavLinkContainer>
           </Navigation>
         </NavContainer>

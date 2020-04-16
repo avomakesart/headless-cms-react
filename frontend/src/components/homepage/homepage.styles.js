@@ -1,10 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 // Icons
-import { ReactComponent as cafe } from "../../assets/icons/cafe.svg";
-import { ReactComponent as paw } from "../../assets/icons/paw.svg";
-import { ReactComponent as code } from "../../assets/icons/code.svg";
-import { ReactComponent as eye } from "../../assets/icons/eye.svg";
-import { ReactComponent as arrowRight } from "../../assets/icons/arrow-right.svg";
+import { ReactComponent as cafe } from '../../assets/icons/cafe.svg';
+import { ReactComponent as paw } from '../../assets/icons/paw.svg';
+import { ReactComponent as code } from '../../assets/icons/code.svg';
+import { ReactComponent as eye } from '../../assets/icons/eye.svg';
+import { ReactComponent as arrowRight } from '../../assets/icons/arrow-right.svg';
 
 export const Cafe = styled(cafe)`
   width: 8rem;
@@ -140,7 +141,7 @@ export const CtaTitle = styled.h2`
   color: black;
 `;
 
-export const CtaButton = styled.button`
+export const CtaButton = styled(Link)`
   background: black;
   cursor: pointer;
   font-size: 15px;
@@ -157,14 +158,22 @@ export const CtaButton = styled.button`
 
 // Services Section
 
+export const Services = styled.div`
+  margin: 0 auto;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+  }
+`;
+
 export const ServicesContainer = styled.div`
   display: flex;
-  flex-direction: column;
   margin: 0 auto;
   @media (min-width: 768px) {
     display: flex;
     justify-content: space-evenly;
-    margin: 0 auto;
     flex-direction: row;
   }
 `;
@@ -172,6 +181,7 @@ export const ServicesContainer = styled.div`
 export const ServicesSolid = styled.div`
   background: black;
   width: 100%;
+  max-width: 100%;
   color: white;
   height: auto;
   border-right: 1px solid white;
@@ -180,6 +190,7 @@ export const ServicesSolid = styled.div`
 export const ServicesSolidLight = styled.div`
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   width: 100%;
+  max-width: 100%;
   color: black;
   height: auto;
   border: 1px solid black;
@@ -195,6 +206,7 @@ export const ServicesSolidClear = styled.div`
     #e9e9e7 100%
   );
   width: 100%;
+  max-width: 100%;
   color: black;
   height: auto;
   border: 1px solid black;
@@ -203,6 +215,7 @@ export const ServicesSolidClear = styled.div`
 export const ServicesSolidGray = styled.div`
   background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   width: 100%;
+  max-width: 100%;
   color: black;
   height: auto;
   border: 1px solid black;
@@ -259,7 +272,7 @@ export const ArrowRightIcon = styled(arrowRight)`
   color: black;
 `;
 
-export const CtaWorkLink = styled.a`
+export const CtaWorkLink = styled(Link)`
   color: #4a4843;
   cursor: pointer;
   font-size: 15px;

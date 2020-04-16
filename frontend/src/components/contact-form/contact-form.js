@@ -1,58 +1,57 @@
-import React, { useState } from "react";
-import { withRouter } from "react-router-dom";
-import FormInput from "../form-input/form-input.component";
-import { Form, DisabledButton } from "./contact-form.styles";
-import CustomButton from "../custom-button/custom-button.component";
+import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
+import FormInput from '../form-input/form-input.component';
+import { Form, DisabledButton } from './contact-form.styles';
+import CustomButton from '../custom-button/custom-button.component';
+import emailjs from 'emailjs-com';
+import Swal from 'sweetalert2';
 
-import emailjs from "emailjs-com";
-import Swal from "sweetalert2";
-
-const ContactForm = props => {
+function ContactForm(props) {
   const [userData, setData] = useState({
-    fullname: "",
-    email: "",
-    telephone: "",
-    subject: "",
-    message: ""
+    fullname: '',
+    email: '',
+    telephone: '',
+    subject: '',
+    message: '',
   });
 
   const { fullname, email, telephone, subject, message } = userData;
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const { fullname, email, telephone, subject, message } = userData;
     let templateParams = {
       from_name: fullname,
       email: email,
-      to_email: "hola@nereabotanicals.com",
-      to_name: "Nerea Botanicals",
+      to_email: 'hi@bluecatencode.com',
+      to_name: 'Bluecatencode Website',
       subject: subject,
       telephone: telephone,
-      message: message
+      message: message,
     };
     emailjs.send(
-      "smtp_server",
-      "template_NNp7q0uL",
+      'smtp_server',
+      'template_gZNCIK0u',
       templateParams,
-      "user_XLU0AAi2jcmS5Ug4bGAS1"
+      'user_oyZbnUPFuBoCCXcacNsMz'
     );
 
     setTimeout(() => {
       Swal.fire({
-        title: "Sweet!",
-        text: "Modal with a custom image.",
-        imageUrl: "https://unsplash.it/400/200",
+        title: 'Sweet!',
+        text: 'Modal with a custom image.',
+        imageUrl: 'https://unsplash.it/400/200',
         imageWidth: 400,
         imageHeight: 200,
-        imageAlt: "Custom image"
+        imageAlt: 'Custom image',
       });
     }, 400);
     setTimeout(() => {
-      props.history.push("/about");
+      props.history.push('/about');
     }, 3000);
   };
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     const { value, name } = event.target;
     setData({ ...userData, [name]: value });
   };
@@ -70,7 +69,7 @@ const ContactForm = props => {
         type="fullname"
         handleChange={handleChange}
         value={fullname}
-        label="Nombre Completo"
+        label="Full name"
         required
       />
       <FormInput
@@ -78,7 +77,7 @@ const ContactForm = props => {
         type="telephone"
         handleChange={handleChange}
         value={telephone}
-        label="Teléfono"
+        label="Telephone"
         required
       />
       <FormInput
@@ -86,7 +85,7 @@ const ContactForm = props => {
         type="email"
         handleChange={handleChange}
         value={email}
-        label="Correo Electrónico"
+        label="Email Address"
         required
       />
       <FormInput
@@ -94,7 +93,7 @@ const ContactForm = props => {
         type="subject"
         handleChange={handleChange}
         value={subject}
-        label="Asunto, Ej: Ayuda"
+        label="Subject, Ej: We need a website"
         required
       />
       <FormInput
@@ -102,7 +101,7 @@ const ContactForm = props => {
         type="message"
         handleChange={handleChange}
         value={message}
-        label="Mensaje"
+        label="Message"
         required
       />
 
@@ -115,6 +114,6 @@ const ContactForm = props => {
       )}
     </Form>
   );
-};
+}
 
 export default withRouter(ContactForm);

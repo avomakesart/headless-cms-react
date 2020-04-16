@@ -1,16 +1,11 @@
-import React, { Component } from "react";
-import NavWork from "../index";
+import React, { Component } from 'react';
+import NavWork from '../index';
 
-import {
-  AllWorkContainer,
-  AllWorkSection,
-  AllWorkInfo,
-  AllWorkH3
-} from "../work.styles";
+import { AllWorkContainer, AllWorkSection, AllWorkInfo } from '../work.styles';
 
-import IconDEMO from "../../../assets/icons/paw.svg";
+// import IconDEMO from '../../../assets/icons/paw.svg';
 
-class UxUi extends Component {
+class AllWork extends Component {
   render() {
     return (
       <>
@@ -18,13 +13,16 @@ class UxUi extends Component {
         <AllWorkContainer>
           <AllWorkSection>
             <AllWorkInfo>
+              <h1>We're Working on this, coming soon</h1>
+            </AllWorkInfo>
+            {/* <AllWorkInfo>
               <img src={IconDEMO} alt="Work" style={{ maxWidth: "100%" }} />
               <AllWorkH3>First One</AllWorkH3>
             </AllWorkInfo>
             <AllWorkInfo>
               <img src={IconDEMO} alt="Work" style={{ maxWidth: "100%" }} />
               <AllWorkH3>First One</AllWorkH3>
-            </AllWorkInfo>
+            </AllWorkInfo> */}
           </AllWorkSection>
         </AllWorkContainer>
       </>
@@ -32,4 +30,4 @@ class UxUi extends Component {
   }
 }
 
-export default UxUi;
+export default AllWork;

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const WorkContainer = styled.div`
     display: flex,
@@ -50,6 +50,14 @@ export const WorkLink = styled(NavLink)`
   color: black;
   margin-left: 3rem;
   text-decoration: none;
+  &:focus {
+    border-bottom: 1px solid black;
+    transition: 0.2s;
+  }
+  &:hover {
+    border-bottom: 1px solid black;
+    transition: 0.2s;
+  }
 `;
 
 // All Work

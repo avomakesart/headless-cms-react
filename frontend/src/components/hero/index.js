@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   HeroContainer,
   HeroWrapper,
@@ -6,29 +6,30 @@ import {
   HeroTitle,
   HeroSubTitle,
   HeroScrollDown,
-  ArrowDownIcon
-} from "./hero.styles";
-import Fade from "react-reveal/Fade";
+  ArrowDownIcon,
+} from './hero.styles';
+import Fade from 'react-reveal/Fade';
+import { withTranslation, Trans } from 'react-i18next';
 
-const Hero = () => {
+const Hero = ({ t }) => {
   return (
     <HeroContainer>
       <HeroWrapper>
         <HeroTextContainer>
-          <HeroTitle>
+          <HeroTitle className="App-title">
             <Fade bottom cascade>
-              Commited to the Internet
+              {t('welcome.title')}
             </Fade>
           </HeroTitle>
-
+          {/* <Trans i18nKey="welcome.title">Commited to the Internet</Trans> */}
           <HeroSubTitle>
             <Fade bottom cascade>
-              Do you need a hand or a paw?
+              {t('welcome.subtitle')}
             </Fade>
           </HeroSubTitle>
           <HeroScrollDown>
             <ArrowDownIcon />
-            Scroll Down
+            {t('welcome.action')}
           </HeroScrollDown>
         </HeroTextContainer>
       </HeroWrapper>
@@ -36,4 +37,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default withTranslation('common')(Hero);

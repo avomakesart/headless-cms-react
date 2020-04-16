@@ -1,44 +1,95 @@
-import React, { Component } from "react";
+import React from 'react';
 
 import {
   AboutContainer,
   AboutTitle,
-  AboutSection,
-  AboutSolid,
+  AboutImageContainer,
   AboutImg,
-  AboutInfo,
+  AboutMainSection,
+  VisionTitle,
+  InfoContainer,
+  AboutScroll,
   AboutSubTitle,
-  AboutParagraph
-} from "./about.styles";
+  AboutParagraph,
+  CtaButton,
+} from './about.styles';
 
-import Deck from "../../components/cards/index";
+// import Deck from '../../components/cards/index';
 
-import { ContainedContainer } from "../../components/homepage/homepage.styles";
+import aboutUs from '../../assets/about.png';
+import bulbs from '../../assets/bulbs.png';
+import catVision from '../../assets/cat.png';
 
-class About extends Component {
-  render() {
-    return (
-      <>
-        <AboutContainer>
-          <AboutTitle items={["Behind The Cat"]} />
-        </AboutContainer>
-        <ContainedContainer>
-          <AboutSection>
-            <AboutInfo>
-              <AboutSubTitle>This is a subtitle</AboutSubTitle>
-              <AboutParagraph>Hello</AboutParagraph>
-            </AboutInfo>
+import Fade from 'react-reveal/Fade';
+import { ContainedContainer } from '../../components/homepage/homepage.styles';
 
-            <AboutInfo>
-              <AboutSubTitle>This is a subtitle</AboutSubTitle>
-              <AboutParagraph>Hello</AboutParagraph>
-              <Deck />
-            </AboutInfo>
-          </AboutSection>
-        </ContainedContainer>
-      </>
-    );
-  }
+function About() {
+  return (
+    <>
+      <AboutContainer>
+        <AboutTitle items={['Behind The Cat']} pause={10500} />
+      </AboutContainer>
+      <ContainedContainer>
+        <AboutMainSection>
+          <AboutScroll items={['Scroll down']} />
+          <AboutSubTitle>Driving solutions to the world</AboutSubTitle>
+          <AboutParagraph>
+            We are a team of nerds, lovers of technology, good code practices,
+            cats and coffee. We offer solutions that can impact the world and
+            help anyone to belong to the technological world.
+          </AboutParagraph>
+        </AboutMainSection>
+        <img
+          src={bulbs}
+          style={{
+            maxWidth: '100%',
+            width: '20rem',
+            margin: '6rem auto',
+            display: 'flex',
+            borderTop: '1.5px solid black',
+          }}
+          alt="Bulbs"
+        />
+        <AboutImageContainer>
+          <Fade>
+            <InfoContainer>
+              <AboutSubTitle>Commited to the internet</AboutSubTitle>
+              <AboutParagraph>
+                The internet grows every day, that is why we are always
+                interested in being updated, in order to offer you the best
+                comprehensive solution.
+              </AboutParagraph>
+            </InfoContainer>
+          </Fade>
+          <AboutImg src={aboutUs} />
+        </AboutImageContainer>
+        <AboutMainSection>
+          <VisionTitle items={['Vision', 'Cats can see at night']} />
+          <AboutParagraph>
+            Being the blue cat that innovates in the world of technology,
+            reaching even the smallest devices.
+          </AboutParagraph>
+        </AboutMainSection>
+        <img
+          src={catVision}
+          style={{
+            maxWidth: '100%',
+            width: '8rem',
+            margin: '6rem auto 0',
+            display: 'flex',
+            border: '1.5px solid black',
+          }}
+          alt="Vision Cat"
+        />
+        <InfoContainer>
+          <AboutSubTitle>Ready to talk?</AboutSubTitle>
+          <CtaButton to="/contact" target="_blank">
+            GET IN TOUCH
+          </CtaButton>
+        </InfoContainer>
+      </ContainedContainer>
+    </>
+  );
 }
 
 export default About;

@@ -1,15 +1,14 @@
-import React, { Component } from "react";
-import Hero from "../../components/hero/index";
-import HomePage from "../../components/homepage/index";
-import { HomeContainer } from "./home.styles";
+import React, { Component } from 'react';
+import Hero from '../../components/hero/index';
+import HomePage from '../../components/homepage/index';
 
 class Home extends Component {
   render() {
     return (
-      <HomeContainer>
+      <div>
         <Hero />
         <HomePage />
-      </HomeContainer>
+      </div>
     );
   }
 }
